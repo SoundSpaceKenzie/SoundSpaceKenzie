@@ -31,23 +31,20 @@ const ProtectRoute = ({ type, children }: IProps) => {
     }
   }, []);
 
-  if (invalidToken || user) {
+  if (invalidToken && user) {
     if ((type === 'login' || type === 'register') && token) {
       return <Navigate to='/dashboard' replace />;
     }
-    return children;
   }
 
-  if (type === 'dashboard' && !token) {
+  if (type === 'dashboard' && (!token || !user)) {
     return <Navigate to='/' replace />;
-  } else if (type === 'dashboard') {
-    return children;
   }
   if ((type === 'login' || type === 'register') && !token) {
     return children;
   }
 
-  return null;
+  return children;
 };
 
 export default ProtectRoute;
