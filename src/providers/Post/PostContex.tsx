@@ -69,7 +69,6 @@ export const PostProvider = ({ children }: IPostProps) => {
   };
 
   const DeleteComments = async (dataComments: IDeleteComments) => {
-    console.log(dataComments);
     try {
       const response = await Api.delete(
         `/comments/${dataComments.commentId}`,

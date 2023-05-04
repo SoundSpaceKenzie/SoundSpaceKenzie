@@ -75,13 +75,55 @@ export const CardPost = ({
         <button>
           <FiHeart className='Icons' />
         </button>
-        <button>
+        <button onClick={() => Show(postID)}>
           <BiCommentDetail className='Icons' />
         </button>
       </div>
 
       <p>{description}</p>
-      <button>Ver todos os comentários</button>
+      <button onClick={() => Show(postID)}>Ver todos os comentários</button>
+      <div style={{ display: showComments === postID ? 'block' : 'none' }}>
+        <ul>
+          {comments
+            ? comments.map((comment) => (
+                <li key={comment.id}>
+                  <p>{comment.text}</p>
+                  {comment.userId === User.id ? (
+                    <button
+                      onClick={() =>
+                        DeleteComments({
+                          commentId: comment.id,
+                          postId: postID,
+                        })
+                      }
+                    >
+                      X
+                    </button>
+                  ) : userPostID === User.id ? (
+                    <button
+                      onClick={() =>
+                        DeleteComments({
+                          postId: postID,
+                          commentId: comment.id,
+                        })
+                      }
+                    >
+                      X
+                    </button>
+                  ) : null}
+                </li>
+              ))
+            : null}
+        </ul>
+        <div>
+          <input
+            type='text'
+            onChange={(e) => setNewComment(e.currentTarget.value)}
+            value={newComment}
+          />
+          <button onClick={() => AddComment(postID)}>Publicar</button>
+        </div>
+      </div>
     </StyledCard>
   );
 };
