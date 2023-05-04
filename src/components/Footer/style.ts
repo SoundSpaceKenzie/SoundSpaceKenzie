@@ -6,7 +6,7 @@ export const Styledfooter = styled.footer`
   background-color: #1a001d;
   padding: 10px;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   justify-content: space-around;
   height: 40px;
