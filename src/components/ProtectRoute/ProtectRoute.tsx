@@ -7,7 +7,6 @@ interface IProps {
   children: JSX.Element;
 }
 interface IToken {
-  sub: string;
   exp: number;
 }
 
@@ -18,7 +17,7 @@ const ProtectRoute = ({ type, children }: IProps) => {
 
   useEffect(() => {
     if (token) {
-      const { sub, exp }: IToken = jwt(token);
+      const { exp }: IToken = jwt(token);
       const currentTime = Date.now() / 1000;
 
       if (exp > currentTime) {
