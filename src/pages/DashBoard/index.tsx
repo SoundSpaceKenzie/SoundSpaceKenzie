@@ -12,13 +12,13 @@ import { UserContext } from '../../providers/User/UserContext';
 export const DashBoard = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const { Users } = useContext(UserContext)
-console.log(Users)
+
 
   return (
     <StyledDashboard>
       <Header />
       <aside className='Sidebar'>
-        <button>Criar Post</button>
+        <button onClick={() => setModalOpen(true)}>Criar Post</button>
       </aside>
       <main>
         <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} />
@@ -27,18 +27,17 @@ console.log(Users)
         <div>
           <ListPost />
         </div>
-
       </main>
 
       <aside className='User-Sugestions'>
         <h3>Sugestões de Usuários</h3>
         <ul>
-          {Users.map(user=>(
-            <CardSuggestions user={user}/>
+          {Users.map((user) => (
+            <CardSuggestions key={user.id} user={user} />
           ))}
         </ul>
       </aside>
-      <Footer setModalOpen={setModalOpen}/>
+      <Footer setModalOpen={setModalOpen} />
     </StyledDashboard>
   );
 };

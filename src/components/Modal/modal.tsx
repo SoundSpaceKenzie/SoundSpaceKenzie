@@ -59,7 +59,8 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
   }, [modalOpen]);
   return (
     <>
-      <dialog ref={modalDialog}>
+      <dialog style={{margin: "30px auto"}} ref={modalDialog}>
+
         <ModalStyled className='main__container'>
           <form onSubmit={handleSubmit(submit)} className='modal__form'>
             <div className='header__form'>
