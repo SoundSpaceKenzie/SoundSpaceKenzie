@@ -11,7 +11,6 @@ import {
   IPostContext,
   IPostProps,
   IPostRegisters,
-  IDataPost,
   IDataLike,
 } from './@types';
 
@@ -51,7 +50,7 @@ export const PostProvider = ({ children }: IPostProps) => {
 
   const PatchLike = async (dataLike: IDataLike) => {
     try {
-      const { data }: IDataPost = await Api.patch(
+      await Api.patch(
         `/posts/${dataLike.postID}`,
         { like: dataLike.like },
         config
