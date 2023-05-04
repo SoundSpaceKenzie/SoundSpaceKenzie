@@ -1,11 +1,18 @@
 import { Styledfooter } from './style';
+import { VscDiffAdded } from 'react-icons/vsc';
 
-export const Footer = () => {
+interface IProps {
+  setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const Footer = ({ setModalOpen }: IProps) => {
   return (
     <Styledfooter>
-      <img src='' alt='' />
-      <img src='' alt='' />
-      <img src='' alt='' />
+      <button></button>
+      <button onClick={() => setModalOpen(true)}>
+        <VscDiffAdded className='Icons' />
+      </button>
+      <button></button>
     </Styledfooter>
   );
 };

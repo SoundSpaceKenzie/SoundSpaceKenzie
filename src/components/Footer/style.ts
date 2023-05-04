@@ -6,11 +6,20 @@ export const Styledfooter = styled.footer`
   background-color: #1a001d;
   padding: 10px;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   justify-content: space-around;
   height: 40px;
-  @media (min-width: 425px) {
+
+  button{
+    background-color: transparent;
+  }
+
+  .Icons{
+    transform:scale(1.8);
+    color:#FFFFFF;
+  }
+  @media (min-width: 765px) {
     display: none;
   }
   img {
