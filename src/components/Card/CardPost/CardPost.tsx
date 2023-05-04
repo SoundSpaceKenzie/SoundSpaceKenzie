@@ -1,6 +1,5 @@
 import { Spotify } from 'react-spotify-embed';
 import ReactPlayer from 'react-player/youtube';
-import { FiHeart } from 'react-icons/fi';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { BiCommentDetail } from 'react-icons/bi';
 import { StyledCard } from './style';

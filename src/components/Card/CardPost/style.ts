@@ -22,20 +22,19 @@ export const StyledCard = styled.li`
   .CardMedia {
     width: 300px;
     height: auto;
+  }
+  .contanier_icons {
+    display: flex;
+    gap: 1em;
+    padding: 0.5em;
 
-    .contanier_icons {
-      display: flex;
-      gap: 1em;
-      padding: 0.5em;
-
-      button {
-        background-color: transparent;
-      }
+    button {
+      background-color: transparent;
     }
+  }
 
-    .Icons {
-      transform: scale(1.8);
-    }
+  .Icons {
+    transform: scale(1.8);
   }
 
   .Icons {
@@ -44,6 +43,7 @@ export const StyledCard = styled.li`
 
   p {
     font-size: 12px;
+    max-width: 300px;
   }
 
   .all_comments {
