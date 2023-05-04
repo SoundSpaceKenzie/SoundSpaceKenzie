@@ -11,8 +11,7 @@ import { UserContext } from '../../providers/User/UserContext';
 
 export const DashBoard = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const { Users } = useContext(UserContext)
-
+  const { Users } = useContext(UserContext);
 
   return (
     <StyledDashboard>

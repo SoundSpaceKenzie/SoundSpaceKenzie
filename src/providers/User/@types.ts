@@ -11,6 +11,7 @@ export interface IUserContext {
   Users: IUser[];
   UserRegister: (data: TRegisterValues) => Promise<void>;
   GetAllUsers: (data: string) => Promise<void>;
+  userLogout: () => void;
 }
 
 export interface IUser {

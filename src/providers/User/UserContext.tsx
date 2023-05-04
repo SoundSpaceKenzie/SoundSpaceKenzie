@@ -29,7 +29,7 @@ export const UserProvider = ({ children }: IUserContextProps) => {
       console.log(error);
     }
   };
-
+  console.log(User);
   const UserLogin = async (dataForm: TLoginValues) => {
     try {
       const { data }: IDataLoginRequest = await Api.post('/login', dataForm);
@@ -62,9 +62,24 @@ export const UserProvider = ({ children }: IUserContextProps) => {
     }
   };
 
+  const userLogout = () => {
+    localStorage.removeItem('@SoundSpace:Token');
+    localStorage.removeItem('@SoundSpace:User');
+    setUser(Object);
+    navigate('/');
+  };
+
   return (
     <UserContext.Provider
-      value={{ UserLogin, User, UserRegister, Users, GetAllUsers, setUser }}
+      value={{
+        UserLogin,
+        User,
+        UserRegister,
+        Users,
+        GetAllUsers,
+        setUser,
+        userLogout,
+      }}
     >
       {children}
     </UserContext.Provider>
