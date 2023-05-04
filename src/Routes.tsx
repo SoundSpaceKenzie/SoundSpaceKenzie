@@ -15,7 +15,14 @@ const Rout = () => (
         </ProtectRoute>
       }
     />
-    <Route path='/register' element={<RegisterPage />} />
+    <Route
+      path='/register'
+      element={
+        <ProtectRoute type='register'>
+          <RegisterPage />
+        </ProtectRoute>
+      }
+    />
     <Route
       path='/dashboard'
       element={
