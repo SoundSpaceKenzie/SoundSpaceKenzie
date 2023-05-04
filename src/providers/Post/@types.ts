@@ -4,25 +4,31 @@ export interface IPostProps {
 
 export interface IPostContext {
   posts: IPost[];
-  CreatePost: (data: IPostRegisters ) => Promise<void>
+  comments: IComments[];
+  CreatePost: (data: IPostRegisters) => Promise<void>;
+  GetComments: (dataComments: IGetComments) => Promise<void>;
+  NewComments: (dataComments: INewComments) => Promise<void>;
+  DeleteComments: (dataComments: IDeleteComments) => Promise<void>;
 }
-  
-export interface IPostRegisters{
-  
-    description: string,
-    link: string,
-    type: string,
-    like?: [],
-    user: {
-      name: string,
-      avatar: string,
-    },
-    userId: number,
-  
+
+export interface IPostRegisters {
+  description: string;
+  link: string;
+  type: string;
+  like?: [];
+  user: {
+    name: string;
+    avatar: string;
+  };
+  userId: number;
 }
 
 export interface IData {
   data: [IPost];
+}
+
+export interface IDataComments {
+  data: [IComments];
 }
 
 export interface IPost {
@@ -45,11 +51,32 @@ interface IUser {
   avatar: string;
 }
 
-
 interface IDataPost {
   description: string;
   link: string;
   type: string;
   like: [ILike];
   userId: number;
+}
+
+export interface IComments {
+  text: string;
+  userId: number;
+  postId: number;
+  id: number;
+}
+
+export interface IGetComments {
+  idPost: number;
+}
+
+export interface INewComments {
+  text: string;
+  userId: number;
+  postId: number;
+}
+
+export interface IDeleteComments {
+  postId: number;
+  commentId: number;
 }
