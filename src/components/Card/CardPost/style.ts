@@ -3,20 +3,24 @@ import styled from 'styled-components';
 export const StyledCard = styled.li`
 display: flex;
 flex-direction: column;
-gap: 0.8em;
-background-color: beige;
+gap: 0.5em;
+margin: 0 auto;
 
 .contanier_user{
   display: flex;
-  gap: 0.2em;
+  gap: 0.5em;
   align-items: center;
+  font-size: 12px;
+  font-weight:600;
+
   img{
     width: 40px;
+    border-radius: 100%;
   }
 }
 
 .CardMedia{
-  width:260px;
+  width:300px;
   height:auto;
 
 }
@@ -36,5 +40,14 @@ button{
   transform:scale(1.8)
 }
 
+p{
+  font-size: 12px;
+}
+
+.all_comments{
+  background-color: transparent;
+  font-size: 12px;
+  width: 142px;
+}
   
 `;

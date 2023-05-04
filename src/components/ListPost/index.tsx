@@ -1,12 +1,14 @@
 import { useContext } from 'react';
 import { PostContext } from '../../providers/Post/PostContex';
-import { CardPost } from '../Card/CardPost';
+import { CardPost } from '../Card/CardPost/CardPost';
+import { StyledListPost } from './style';
 
 export const ListPost = () => {
   const { posts } = useContext(PostContext);
 
   return (
-    <ul>
+    <StyledListPost>
+      <h1>Feed</h1>
       {posts.map((post) => (
         <CardPost
           type={post.type}
@@ -19,6 +21,6 @@ export const ListPost = () => {
           userPostID={post.userId}
         />
       ))}
-    </ul>
+    </StyledListPost>
   );
 };
