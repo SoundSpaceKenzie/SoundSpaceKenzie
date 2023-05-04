@@ -35,6 +35,6 @@ export const StyledCard = styled.li`
   }
 
   #LikeButton {
-    color: red;
+    color: #ba1016;
   }
 `;
