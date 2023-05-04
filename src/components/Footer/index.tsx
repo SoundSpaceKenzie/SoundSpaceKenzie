@@ -8,11 +8,9 @@ interface IProps {
 export const Footer = ({ setModalOpen }: IProps) => {
   return (
     <Styledfooter>
-      <button></button>
       <button onClick={() => setModalOpen(true)}>
         <VscDiffAdded className='Icons' />
       </button>
-      <button></button>
     </Styledfooter>
   );
 };
