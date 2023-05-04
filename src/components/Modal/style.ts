@@ -4,7 +4,7 @@ export const ModalStyled = styled.div`
   border: 3px solid var(--color-secundary);
   border-radius: 4px;
   padding: 20px;
-
+  margin: 0 auto;
   width: 375px;
   height: 442px;
 

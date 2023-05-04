@@ -5,6 +5,7 @@ display: flex;
 flex-direction: column;
 gap: 0.5em;
 margin: 0 auto;
+width: 320px;
 
 .contanier_user{
   display: flex;
@@ -20,15 +21,18 @@ margin: 0 auto;
 }
 
 .CardMedia{
-  width:300px;
+  display: flex;
+  align-items:center;
+  width:320px;
   height:auto;
-
+  
 }
 
 .contanier_icons{
 display: flex;
 gap: 1em;
 padding: 0.5em;
+width:300px;
 
 button{
   background-color: transparent;
@@ -42,6 +46,8 @@ button{
 
 p{
   font-size: 12px;
+  width: 300px;
+
 }
 
 .all_comments{

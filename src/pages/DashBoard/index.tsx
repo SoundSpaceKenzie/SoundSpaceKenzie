@@ -12,6 +12,7 @@ import { UserContext } from '../../providers/User/UserContext';
 export const DashBoard = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const { Users } = useContext(UserContext)
+console.log(Users)
 
   return (
     <StyledDashboard>
@@ -32,11 +33,11 @@ export const DashBoard = () => {
       </main>
 
       <aside className='User-Sugestions'>
-        <h3>Sugestões</h3>
+        <h3>Sugestões de Usuários</h3>
         <ul>
-          {Users.map(user=>{
-            <CardSuggestions/>
-          })}
+          {Users.map(user=>(
+            <CardSuggestions user={user}/>
+          ))}
         </ul>
       </aside>
       <Footer setModalOpen={setModalOpen}/>
