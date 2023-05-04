@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
 import { RegisterPage } from './pages/RegisterPage';
 import { DashBoard } from './pages/DashBoard';
@@ -33,6 +33,7 @@ const Rout = () => (
         </ProtectRoute>
       }
     />
+    <Route path='*' element={<Navigate to='/' />} />
   </Routes>
 );
 
