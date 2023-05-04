@@ -57,7 +57,6 @@ export const PostProvider = ({ children }: IPostProps) => {
         config
       );
       GetPosts();
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
