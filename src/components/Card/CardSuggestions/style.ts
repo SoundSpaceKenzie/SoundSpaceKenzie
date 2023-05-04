@@ -8,7 +8,7 @@ padding: 0.5em 1em;
 justify-content: space-between;
 img{
     width: 40px;
-    border-radius: 100%;
+    border-radius: 50%;
   }
 
   p{
@@ -28,5 +28,10 @@ img{
     font-weight: 600;
     background-color:var(--grey-1);
     color: var(--color-primary);
+  }
+
+  .seguindo{
+    background-color:var(--grey-0);
+    border: 2px solid var(--color-secundary);
   }
 `

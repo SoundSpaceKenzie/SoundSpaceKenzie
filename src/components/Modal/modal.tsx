@@ -45,13 +45,12 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
       },
       userId: User.id,
     };
-    CreatePost(newData)
-    setModalOpen(false)
+    CreatePost(newData);
+    setModalOpen(false);
   };
 
   useEffect(() => {
     if (modalOpen) {
-      console.log(modalOpen);
       modalDialog.current?.showModal();
     } else {
       modalDialog.current?.close();
@@ -59,13 +58,13 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
   }, [modalOpen]);
   return (
     <>
-      <dialog ref={modalDialog}>
+      <dialog style={{ margin: '30px auto' }} ref={modalDialog}>
         <ModalStyled className='main__container'>
           <form onSubmit={handleSubmit(submit)} className='modal__form'>
             <div className='header__form'>
               <h1 className='title__form'>Cadastrar Post</h1>
               <button
-              type='button'
+                type='button'
                 className='close__button'
                 onClick={() => setModalOpen(false)}
               >
