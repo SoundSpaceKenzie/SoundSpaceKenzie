@@ -30,14 +30,14 @@ export const CardPost = ({ name, avatar, url, description, type }: IProps) => {
     
       </div>
         
-     <div className="Icons" >
-     <FiHeart /> <BiCommentDetail />
+     <div className="contanier_icons" >
+     <button><FiHeart className="Icons" /></button>
+     <button><BiCommentDetail className="Icons" /></button>
      </div>
      
       <p>{description}</p>
-
-     
-      
+      <button>Ver todos os comentários</button>
+ 
     </StyledCard>
      
   )

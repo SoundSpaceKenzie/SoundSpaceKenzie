@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 export const StyledCard = styled.li`
+display: flex;
+flex-direction: column;
+gap: 0.8em;
+background-color: beige;
+
 .contanier_user{
   display: flex;
   gap: 0.2em;
@@ -9,5 +14,27 @@ export const StyledCard = styled.li`
     width: 40px;
   }
 }
+
+.CardMedia{
+  width:260px;
+  height:auto;
+
+}
+
+.contanier_icons{
+display: flex;
+gap: 1em;
+padding: 0.5em;
+
+button{
+  background-color: transparent;
+}
+
+}
+
+.Icons{
+  transform:scale(1.8)
+}
+
   
 `;
