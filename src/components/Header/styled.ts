@@ -10,11 +10,13 @@ export const StyledHeader = styled.header`
   height: 80px;
   background-color: #1a001d;
   color: white;
+  z-index: 1;
   .Resp-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
     max-width: 1024px;
+    padding: 0px 25px;
     .logo {
       max-height: 75px;
     }

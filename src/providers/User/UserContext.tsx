@@ -19,8 +19,6 @@ export const UserProvider = ({ children }: IUserContextProps) => {
 
   const navigate = useNavigate();
 
-  console.log(Users)
-
   const GetAllUsers = async (token: string) => {
     try {
       const { data } = await Api.get('/users', {

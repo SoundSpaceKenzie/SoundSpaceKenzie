@@ -8,7 +8,7 @@ padding: 0.5em 1em;
 justify-content: space-between;
 img{
     width: 40px;
-    border-radius: 100%;
+    border-radius: 50%;
   }
 
   p{
