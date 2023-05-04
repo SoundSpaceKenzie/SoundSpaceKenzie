@@ -1,11 +1,13 @@
 import { Spotify } from 'react-spotify-embed';
 import ReactPlayer from 'react-player/youtube';
 import { FiHeart } from 'react-icons/fi';
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { BiCommentDetail } from 'react-icons/bi';
 import { StyledCard } from './style';
 import { UserContext } from '../../providers/User/UserContext';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { PostContext } from '../../providers/Post/PostContex';
+import { ILike } from '../../providers/Post/@types';
 
 interface IProps {
   url: string;
@@ -15,6 +17,7 @@ interface IProps {
   type: string;
   postID: number;
   userPostID: number;
+  likes: [ILike];
 }
 
 export const CardPost = ({
@@ -25,13 +28,24 @@ export const CardPost = ({
   description,
   type,
   userPostID,
+  likes,
 }: IProps) => {
-  const { GetComments, comments, NewComments, DeleteComments } =
+  const { GetComments, comments, NewComments, DeleteComments, PatchLike } =
     useContext(PostContext);
   const { User } = useContext(UserContext);
 
   const [newComment, setNewComment] = useState<string>('');
   const [showComments, setShowComments] = useState(0);
+  const [like, setLike] = useState(false);
+
+  useEffect(() => {
+    if (likes) {
+      const filter = likes.filter((element) => element.userID === User.id);
+      if (filter.length > 0) {
+        setLike(true);
+      }
+    }
+  }, []);
 
   const Show = (id: number) => {
     GetComments({ idPost: id });
@@ -47,6 +61,25 @@ export const CardPost = ({
     if (newComment !== '') {
       NewComments({ postId: id, text: newComment, userId: User.id });
       setNewComment('');
+    }
+  };
+
+  const Like = () => {
+    if (!likes) {
+      PatchLike({ postID: postID, like: [{ userID: User.id }] });
+    } else {
+      const filter = likes.filter((element) => element.userID === User.id);
+
+      if (filter.length > 0) {
+        const filterRemove = likes.filter(
+          (element) => element.userID !== User.id
+        );
+        setLike(false);
+        PatchLike({ postID: postID, like: filterRemove });
+      } else {
+        PatchLike({ postID: postID, like: [...likes, { userID: User.id }] });
+        setLike(true);
+      }
     }
   };
 
@@ -72,8 +105,12 @@ export const CardPost = ({
       </div>
 
       <div className='contanier_icons'>
-        <button>
-          <FiHeart className='Icons' />
+        <button onClick={Like}>
+          {like ? (
+            <AiFillHeart className='Icons' id='LikeButton' />
+          ) : (
+            <AiOutlineHeart className='Icons' />
+          )}
         </button>
         <button onClick={() => Show(postID)}>
           <BiCommentDetail className='Icons' />
