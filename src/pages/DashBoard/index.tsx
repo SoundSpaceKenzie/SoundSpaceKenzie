@@ -3,7 +3,6 @@
 import { Header } from '../../components/Header';
 import { ListPost } from '../../components/ListPost';
 import { StyledDashboard } from './style';
-
 import { Footer } from '../../components/Footer';
 
 import { useState } from 'react';

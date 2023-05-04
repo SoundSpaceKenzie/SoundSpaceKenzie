@@ -3,6 +3,7 @@ import { Spotify } from "react-spotify-embed";
 import ReactPlayer from "react-player/youtube";
 import { FiHeart } from 'react-icons/fi'
 import { BiCommentDetail } from 'react-icons/bi'
+import { StyledCard } from "./style";
 
 
 interface IProps {
@@ -15,8 +16,8 @@ interface IProps {
 
 export const CardPost = ({ name, avatar, url, description, type }: IProps) => {
   return (
-    <li>
-      <div>
+    <StyledCard>
+      <div className="contanier_user">
         <img src={avatar} alt='Usuário' />
         <p>{name}</p>
       </div>
@@ -37,7 +38,7 @@ export const CardPost = ({ name, avatar, url, description, type }: IProps) => {
 
      
       
-    </li>
+    </StyledCard>
      
   )
 }
