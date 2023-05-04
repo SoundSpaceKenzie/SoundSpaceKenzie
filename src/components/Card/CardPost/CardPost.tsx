@@ -91,7 +91,7 @@ export const CardPost = ({
 
       <div className='CardMedia'>
         {type === 'Spotify' ? (
-          <Spotify link={url} width={300} height={255}></Spotify>
+          <Spotify link={url} width={272} height={255}></Spotify>
         ) : (
           <ReactPlayer
             className='react-player'

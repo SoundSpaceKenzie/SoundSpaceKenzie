@@ -29,4 +29,9 @@ img{
     background-color:var(--grey-1);
     color: var(--color-primary);
   }
+
+  .seguindo{
+    background-color:var(--grey-0);
+    border: 2px solid var(--color-secundary);
+  }
 `

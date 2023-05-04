@@ -25,6 +25,7 @@ export const StyledDashboard = styled.div`
       padding: 15px;
       gap: 25px;
       padding-top: 58px;
+      min-height: 100vh;
     }
     button {
       background-color: white;

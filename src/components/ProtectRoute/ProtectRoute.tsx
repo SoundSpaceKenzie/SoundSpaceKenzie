@@ -1,6 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import jwt from 'jwt-decode';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../providers/User/UserContext';
 
 interface IProps {
   type: string;
@@ -11,6 +12,7 @@ interface IToken {
 }
 
 const ProtectRoute = ({ type, children }: IProps) => {
+  const { GetAllUsers } = useContext(UserContext)
   const [invalidToken, setInvalidToken] = useState(false);
   const token = localStorage.getItem('@SoundSpace:Token');
   const user = localStorage.getItem('@SoundSpace:User');
@@ -22,6 +24,7 @@ const ProtectRoute = ({ type, children }: IProps) => {
 
       if (exp > currentTime) {
         setInvalidToken(true);
+        GetAllUsers(token)
       } else {
         setInvalidToken(false);
         localStorage.removeItem('@SoundSpace:Token');
