@@ -7,11 +7,14 @@ export interface IUserContextProps {
 export interface IUserContext {
   UserLogin: (data: TLoginValues) => Promise<void>;
   User: IUser;
+  setUser: React.Dispatch<React.SetStateAction<IUser>>;
   Users: IUser[];
   UserRegister: (data: TRegisterValues) => Promise<void>;
+  GetAllUsers: (data: string) => Promise<void>;
 }
 
 export interface IUser {
+  length: number;
   email: string;
   name: string;
   avatar: string;

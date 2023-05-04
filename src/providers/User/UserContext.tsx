@@ -19,8 +19,6 @@ export const UserProvider = ({ children }: IUserContextProps) => {
 
   const navigate = useNavigate();
 
-  console.log(Users);
-
   const GetAllUsers = async (token: string) => {
     try {
       const { data } = await Api.get('/users', {
@@ -37,6 +35,7 @@ export const UserProvider = ({ children }: IUserContextProps) => {
       const { data }: IDataLoginRequest = await Api.post('/login', dataForm);
       setUser(data.user);
       localStorage.setItem('@SoundSpace:Token', data.accessToken);
+      localStorage.setItem('@SoundSpace:User', JSON.stringify(data.user));
       GetAllUsers(data.accessToken);
       navigate('/dashboard');
     } catch (error) {
@@ -64,7 +63,9 @@ export const UserProvider = ({ children }: IUserContextProps) => {
   };
 
   return (
-    <UserContext.Provider value={{ UserLogin, User, UserRegister, Users }}>
+    <UserContext.Provider
+      value={{ UserLogin, User, UserRegister, Users, GetAllUsers, setUser }}
+    >
       {children}
     </UserContext.Provider>
   );

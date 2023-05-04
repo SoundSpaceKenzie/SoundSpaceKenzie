@@ -5,6 +5,8 @@ export const StyledDashboard = styled.div`
   justify-content: center;
   padding-top: 80px;
   padding-bottom: 40px;
+  width:100%;
+  height: auto;
 
   @media (min-width: 765px) {
     flex-direction: row;
