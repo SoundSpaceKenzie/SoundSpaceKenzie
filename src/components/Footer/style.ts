@@ -10,7 +10,7 @@ export const Styledfooter = styled.footer`
   bottom: 0;
   justify-content: space-around;
   height: 40px;
-  @media (min-width: 425px) {
+  @media (min-width: 765px) {
     display: none;
   }
   img {
