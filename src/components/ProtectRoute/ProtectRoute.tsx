@@ -38,6 +38,8 @@ const ProtectRoute = ({ type, children }: IProps) => {
   }
 
   if (type === 'dashboard' && (!token || !user)) {
+    localStorage.removeItem('@SoundSpace:Token');
+    localStorage.removeItem('@SoundSpace:User');
     return <Navigate to='/' replace />;
   }
   if ((type === 'login' || type === 'register') && !token) {
