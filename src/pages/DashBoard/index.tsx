@@ -11,13 +11,14 @@ import { UserContext } from '../../providers/User/UserContext';
 
 export const DashBoard = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const { Users } = useContext(UserContext);
+  const { Users } = useContext(UserContext)
+
 
   return (
     <StyledDashboard>
       <Header />
       <aside className='Sidebar'>
-        <button>Criar Post</button>
+        <button onClick={() => setModalOpen(true)}>Criar Post</button>
       </aside>
       <main>
         <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} />
