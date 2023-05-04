@@ -9,21 +9,14 @@ export const StyledCard = styled.li`
 
   .contanier_user {
     display: flex;
-    flex-direction: column;
     gap: 0.5em;
-    margin: 0 auto;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
 
-    .contanier_user {
-      display: flex;
-      gap: 0.5em;
-      align-items: center;
-      font-size: 12px;
-      font-weight: 600;
-
-      img {
-        width: 40px;
-        border-radius: 100%;
-      }
+    img {
+      width: 40px;
+      border-radius: 100%;
     }
   }
 
