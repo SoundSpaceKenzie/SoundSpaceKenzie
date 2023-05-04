@@ -1,5 +1,3 @@
-
-
 import { Header } from '../../components/Header';
 import { ListPost } from '../../components/ListPost';
 import { StyledDashboard } from './style';
@@ -9,22 +7,24 @@ import { useState } from 'react';
 import Modal from '../../components/Modal/modal';
 import { UserTitle } from '../../components/UserTitle';
 
-
 export const DashBoard = () => {
   const [modalOpen, setModalOpen] = useState(false);
-
   return (
     <StyledDashboard>
       <Header />
+      <aside className='Sidebar'>
+        <button>Criar Post</button>
+        <button>Pesquisar</button>
+        <button>Usuarios</button>
+      </aside>
       <main>
-
         <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} />
         <button onClick={() => setModalOpen(true)}> abrir modal </button>
         <UserTitle />
 
-        <main>
+        <div>
           <ListPost />
-        </main>
+        </div>
 
         <h1>Feed</h1>
         <ul>
@@ -42,13 +42,7 @@ export const DashBoard = () => {
         </ul>
       </main>
 
-      <aside>
-        <ul>
-          <li>Criar Post</li>
-          <li>Buscar</li>
-        </ul>
-      </aside>
-      <aside>
+      <aside className='User-Sugestions'>
         <h3>Sugestões</h3>
         <ul>
           <li>
