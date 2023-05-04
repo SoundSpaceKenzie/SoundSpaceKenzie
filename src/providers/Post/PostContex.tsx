@@ -11,6 +11,9 @@ import {
   IPostContext,
   IPostProps,
   IPostRegisters,
+  ILike,
+  IDataPost,
+  IDataLike,
 } from './@types';
 
 export const PostContext = createContext({} as IPostContext);
@@ -18,6 +21,7 @@ export const PostContext = createContext({} as IPostContext);
 export const PostProvider = ({ children }: IPostProps) => {
   const token = localStorage.getItem('@SoundSpace:Token');
   const [comments, setComments] = useState<IComments[]>([]);
+  const [likes, setLikes] = useState<ILike[]>([]);
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -46,6 +50,20 @@ export const PostProvider = ({ children }: IPostProps) => {
   useEffect(() => {
     GetPosts();
   }, []);
+
+  const PatchLike = async (dataLike: IDataLike) => {
+    try {
+      const { data }: IDataPost = await Api.patch(
+        `/posts/${dataLike.postID}`,
+        { like: dataLike.like },
+        config
+      );
+      GetPosts();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const GetComments = async (dataComments: IGetComments) => {
     setComments([]);
@@ -89,6 +107,7 @@ export const PostProvider = ({ children }: IPostProps) => {
         comments,
         NewComments,
         DeleteComments,
+        PatchLike,
       }}
     >
       {children}

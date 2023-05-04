@@ -19,6 +19,7 @@ export const ListPost = () => {
           name={post.user.name}
           postID={post.id}
           userPostID={post.userId}
+          likes={post.like}
         />
       ))}
     </StyledListPost>
