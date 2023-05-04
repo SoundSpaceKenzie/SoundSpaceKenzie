@@ -6,6 +6,7 @@ align-items: center;
 gap: 1em;
 padding: 0.5em 1em;
 justify-content: space-between;
+
 img{
     width: 40px;
     border-radius: 50%;
@@ -18,11 +19,12 @@ img{
 
   .contanier_user{
     display: flex;
-    gap: 0.3em;
+    gap: 0.1em;
     align-items: center;
   }
 
   button{
+    width: 87px;
     padding: 0.4em 0.7em;
     font-size:14px;
     font-weight: 600;
