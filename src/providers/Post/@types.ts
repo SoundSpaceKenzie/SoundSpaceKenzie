@@ -4,10 +4,22 @@ export interface IPostProps {
 
 export interface IPostContext {
   posts: IPost[];
-  CreatePost: (data: IPost ) => Promise<void>
+  CreatePost: (data: IPostRegisters ) => Promise<void>
 }
   
+export interface IPostRegisters{
   
+    description: string,
+    link: string,
+    type: string,
+    like?: [],
+    user: {
+      name: string,
+      avatar: string,
+    },
+    userId: number,
+  
+}
 
 export interface IData {
   data: [IPost];
