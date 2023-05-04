@@ -123,10 +123,10 @@ export const CardPost = ({
         Ver todos os comentários
       </button>
       <div style={{ display: showComments === postID ? 'block' : 'none' }}>
-        <ul>
+        <ul className='contanier_allComments'>
           {comments
             ? comments.map((comment) => (
-                <li key={comment.id}>
+                <li className='comments' key={comment.id}>
                   <p>{comment.text}</p>
                   {comment.userId === User.id ? (
                     <button
@@ -155,7 +155,7 @@ export const CardPost = ({
               ))
             : null}
         </ul>
-        <div>
+        <div className='contanier_postComment'>
           <input
             type='text'
             onChange={(e) => setNewComment(e.currentTarget.value)}
