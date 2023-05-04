@@ -7,7 +7,6 @@ export const StyledDashboard = styled.div`
   padding-bottom: 40px;
   width:100%;
   height: auto;
-  background-color: aliceblue;
 
   @media (min-width: 765px) {
     flex-direction: row;

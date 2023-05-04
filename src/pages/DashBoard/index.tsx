@@ -19,8 +19,6 @@ console.log(Users)
       <Header />
       <aside className='Sidebar'>
         <button>Criar Post</button>
-        <button>Pesquisar</button>
-        <button>Usuarios</button>
       </aside>
       <main>
         <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} />
