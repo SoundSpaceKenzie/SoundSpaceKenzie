@@ -63,4 +63,50 @@ export const StyledCard = styled.li`
     font-size: 12px;
     width: 142px;
   }
+
+  .contanier_allComments{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .comments{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button{
+      background-color: var(--grey-1);
+      padding:0.2em;
+      font-size:10px;
+      width:14px;
+      height:14px;
+      border-radius: 50%;
+      text-align: center;
+      color: var(--grey-3);
+    }
+  }
+
+  .contanier_postComment{
+  display: flex;
+  margin-top: 0.5em;
+  gap: 0.5em;
+  justify-content: space-between;
+
+  input{
+    width: 100%;
+    height: 30px;
+    border-radius:5px;
+    padding-left: 0.5em;
+  }
+
+  button{
+    padding: 0.5em;
+    border-radius:5px ;
+    background-color: var(--grey-1);
+    color: var(--grey-3);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  }
 `;

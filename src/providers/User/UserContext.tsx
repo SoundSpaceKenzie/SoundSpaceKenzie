@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 import { toast } from 'react-toastify';
 import {
   IUser,
@@ -35,6 +35,7 @@ export const UserProvider = ({ children }: IUserContextProps) => {
       const { data }: IDataLoginRequest = await Api.post('/login', dataForm);
       setUser(data.user);
       localStorage.setItem('@SoundSpace:Token', data.accessToken);
+      localStorage.setItem('@SoundSpace:User', JSON.stringify(data.user));
       GetAllUsers(data.accessToken);
       navigate('/dashboard');
     } catch (error) {
@@ -53,7 +54,7 @@ export const UserProvider = ({ children }: IUserContextProps) => {
       password: data.password,
     };
     try {
-      const response = await Api.post('/register', newData);
+      await Api.post('/register', newData);
       toast.success('Conta criada com sucesso!');
       navigate('/');
     } catch (error) {
@@ -62,7 +63,9 @@ export const UserProvider = ({ children }: IUserContextProps) => {
   };
 
   return (
-    <UserContext.Provider value={{ UserLogin, User, UserRegister, Users }}>
+    <UserContext.Provider
+      value={{ UserLogin, User, UserRegister, Users, GetAllUsers, setUser }}
+    >
       {children}
     </UserContext.Provider>
   );

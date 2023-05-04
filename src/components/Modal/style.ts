@@ -3,10 +3,15 @@ import styled from 'styled-components';
 export const ModalStyled = styled.div`
   border: 3px solid var(--color-secundary);
   border-radius: 4px;
+
+  box-sizing: border-box;
   padding: 20px;
-  margin: 0 auto;
-  width: 375px;
+  /* margin: 0 auto; */
+
+  width: 290px;
   height: 442px;
+
+  margin: 0 auto;
 
   .modal__form {
     display: flex;
@@ -89,5 +94,11 @@ export const ModalStyled = styled.div`
     height: 44px;
 
     border-radius: 5px;
+  }
+
+  @media (min-width: 450px) {
+    width: 375px;
+
+
   }
 `;
