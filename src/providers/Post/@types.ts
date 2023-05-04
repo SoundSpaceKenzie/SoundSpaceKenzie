@@ -4,13 +4,37 @@ export interface IPostProps {
 
 export interface IPostContext {
   posts: IPost[];
-  CreatePost: (data: IPost ) => Promise<void>
+  comments: IComments[];
+  CreatePost: (data: IPostRegisters) => Promise<void>;
+  GetComments: (dataComments: IGetComments) => Promise<void>;
+  NewComments: (dataComments: INewComments) => Promise<void>;
+  DeleteComments: (dataComments: IDeleteComments) => Promise<void>;
+  PatchLike: (dataComments: IDataLike) => Promise<void>;
 }
-  
-  
+
+export interface IPostRegisters {
+  description: string;
+  link: string;
+  type: string;
+  like?: [];
+  user: {
+    name: string;
+    avatar: string;
+  };
+  userId: number;
+}
 
 export interface IData {
   data: [IPost];
+}
+
+export interface IDataComments {
+  data: [IComments];
+}
+
+export interface IDataLike {
+  postID: number;
+  like: ILike[];
 }
 
 export interface IPost {
@@ -25,7 +49,7 @@ export interface IPost {
 }
 
 export interface ILike {
-  useID: number;
+  userID: number;
 }
 
 interface IUser {
@@ -33,11 +57,35 @@ interface IUser {
   avatar: string;
 }
 
+export interface IDataPost {
+  data: {
+    description: string;
+    link: string;
+    type: string;
+    user: IUser;
+    like: [ILike];
+    userId: number;
+  };
+}
 
-interface IDataPost {
-  description: string;
-  link: string;
-  type: string;
-  like: [ILike];
+export interface IComments {
+  text: string;
   userId: number;
+  postId: number;
+  id: number;
+}
+
+export interface IGetComments {
+  idPost: number;
+}
+
+export interface INewComments {
+  text: string;
+  userId: number;
+  postId: number;
+}
+
+export interface IDeleteComments {
+  postId: number;
+  commentId: number;
 }

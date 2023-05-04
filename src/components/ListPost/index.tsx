@@ -8,13 +8,16 @@ export const ListPost = () => {
   return (
     <ul>
       {posts.map((post) => (
-        <CardPost 
-          type ={post.type}
+        <CardPost
+          type={post.type}
           key={post.id}
           url={post.link}
           description={post.description}
           avatar={post.user.avatar}
           name={post.user.name}
+          postID={post.id}
+          userPostID={post.userId}
+          likes={post.like}
         />
       ))}
     </ul>
