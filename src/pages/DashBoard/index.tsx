@@ -13,7 +13,6 @@ import { UserTitle } from '../../components/UserTitle';
 
 export const DashBoard = () => {
   const [modalOpen, setModalOpen] = useState(false);
-
   return (
     <StyledDashboard>
       <Header />
