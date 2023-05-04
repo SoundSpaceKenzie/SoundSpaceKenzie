@@ -1,9 +1,7 @@
-
-import { Spotify } from "react-spotify-embed";
-import ReactPlayer from "react-player";
-import { FiHeart } from 'react-icons/fi'
-import { BiCommentDetail } from 'react-icons/bi'
-
+import { Spotify } from 'react-spotify-embed';
+import ReactPlayer from 'react-player';
+import { FiHeart } from 'react-icons/fi';
+import { BiCommentDetail } from 'react-icons/bi';
 
 interface IProps {
   url: string;
@@ -20,7 +18,7 @@ export const CardPost = ({ name, avatar, url, description, type }: IProps) => {
         <img src={avatar} alt='Usuário' />
         <p>{name}</p>
       </div>
-{/* 
+      {/* 
       <div className="CardMedia">
         { type === "Spotify" ? <Spotify link={url} width={300} height={255}></Spotify> :
         <ReactPlayer className='react-player'url={url} width='100%' height='250px' controls={true}
@@ -28,17 +26,12 @@ export const CardPost = ({ name, avatar, url, description, type }: IProps) => {
         
     
       </div> */}
-        
-     <div className="Icons" >
-     <FiHeart /> <BiCommentDetail />
-     </div>
-     
+
+      <div className='Icons'>
+        <FiHeart /> <BiCommentDetail />
+      </div>
+
       <p>{description}</p>
-
-     
-      
     </li>
-     
-  )
-}
-
+  );
+};
