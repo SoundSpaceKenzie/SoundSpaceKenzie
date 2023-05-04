@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 import { toast } from 'react-toastify';
 import {
   IUser,
@@ -19,7 +19,7 @@ export const UserProvider = ({ children }: IUserContextProps) => {
 
   const navigate = useNavigate();
 
-  console.log(Users)
+  console.log(Users);
 
   const GetAllUsers = async (token: string) => {
     try {
@@ -55,7 +55,7 @@ export const UserProvider = ({ children }: IUserContextProps) => {
       password: data.password,
     };
     try {
-      const response = await Api.post('/register', newData);
+      await Api.post('/register', newData);
       toast.success('Conta criada com sucesso!');
       navigate('/');
     } catch (error) {
