@@ -1,13 +1,12 @@
 import { Spotify } from 'react-spotify-embed';
 import ReactPlayer from 'react-player/youtube';
-import { FiHeart } from 'react-icons/fi';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { BiCommentDetail } from 'react-icons/bi';
 import { StyledCard } from './style';
-import { UserContext } from '../../providers/User/UserContext';
+import { UserContext } from '../../../providers/User/UserContext';
 import { useContext, useEffect, useState } from 'react';
-import { PostContext } from '../../providers/Post/PostContex';
-import { ILike } from '../../providers/Post/@types';
+import { PostContext } from '../../../providers/Post/PostContex';
+import { ILike } from '../../../providers/Post/@types';
 
 interface IProps {
   url: string;
@@ -117,8 +116,12 @@ export const CardPost = ({
         </button>
       </div>
 
-      <p>{description}</p>
-      <button onClick={() => Show(postID)}>Ver todos os comentários</button>
+      <p className='description'>
+        <strong>{name}</strong> {description}
+      </p>
+      <button className='all_comments' onClick={() => Show(postID)}>
+        Ver todos os comentários
+      </button>
       <div style={{ display: showComments === postID ? 'block' : 'none' }}>
         <ul>
           {comments

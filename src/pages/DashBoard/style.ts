@@ -2,12 +2,14 @@ import styled from 'styled-components';
 
 export const StyledDashboard = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: 80px;
   padding-bottom: 40px;
+
   @media (min-width: 765px) {
     flex-direction: row;
     padding-bottom: 0px;
+    justify-content: space-between;
   }
   .Sidebar {
     display: none;
@@ -21,6 +23,7 @@ export const StyledDashboard = styled.div`
       padding: 15px;
       gap: 25px;
       padding-top: 58px;
+      height: 100vh;
     }
     button {
       background-color: white;
@@ -35,7 +38,17 @@ export const StyledDashboard = styled.div`
 
     @media (min-width: 765px) {
       display: flex;
+      gap: 1em;
       flex-direction: column;
+      align-items: center;
+      padding: 1em;
+      background-color:#f5f5f5;
+      height:50%;
+
+      h3{
+        font-size: 16px;
+        color:var(--color-primary);
+      }
     }
   }
 `;
