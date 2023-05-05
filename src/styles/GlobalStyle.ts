@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     border: none;
     list-style: none;
     text-decoration: none;
-
+    font-family: Inter;
 }
 
 :root{
