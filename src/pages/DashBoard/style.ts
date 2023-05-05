@@ -33,6 +33,7 @@ export const StyledDashboard = styled.div`
       padding: 0.5rem;
       border: 2px solid #11dcda;
       border-radius: 5px;
+      font-weight: 600;
     }
   }
   .User-Sugestions {
@@ -43,11 +44,11 @@ export const StyledDashboard = styled.div`
       gap: 1em;
       flex-direction: column;
       align-items: center;
-      padding: 1em;
       background-color: #f5f5f5;
       height: 50%;
 
       h3 {
+        padding: 1em;
         font-size: 16px;
         color: var(--color-primary);
       }

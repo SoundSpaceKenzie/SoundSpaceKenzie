@@ -19,7 +19,7 @@ export const UserTitle = () => {
 
   return (
     <Container>
-      <h2>Olá,{userLocal?.name}</h2>
+      <h2>Olá, {userLocal?.name}</h2>
       <p>O que você está escutando hoje?</p>
     </Container>
   );

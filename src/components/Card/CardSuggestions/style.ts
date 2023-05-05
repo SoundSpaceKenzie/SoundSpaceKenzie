@@ -8,8 +8,10 @@ padding: 0.5em 1em;
 justify-content: space-between;
 
 img{
-    width: 40px;
+  width: 40px;
     border-radius: 50%;
+    height: 40px;
+    object-fit:cover;
   }
 
   p{
@@ -19,8 +21,9 @@ img{
 
   .contanier_user{
     display: flex;
-    gap: 0.1em;
+    gap: 0.5em;
     align-items: center;
+    flex-direction:row;
   }
 
   button{
@@ -31,6 +34,7 @@ img{
     background-color:var(--grey-1);
     color: var(--color-primary);
   }
+
 
   .seguindo{
     background-color:var(--grey-0);

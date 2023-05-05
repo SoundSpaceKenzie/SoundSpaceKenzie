@@ -6,6 +6,8 @@ export const StyledCard = styled.li`
   gap: 0.5em;
   margin: 0 auto;
   width: 100%;
+  background-color:#f5f5f5;
+  padding: 1em;
 
   .contanier_user {
     display: flex;
@@ -17,6 +19,8 @@ export const StyledCard = styled.li`
 
     img {
       width: 40px;
+      height: 40px;
+      object-fit:cover;
       border-radius: 100%;
     }
   }
@@ -42,12 +46,13 @@ export const StyledCard = styled.li`
   p {
     font-size: 12px;
     width:100%;
+    max-width:240px;
   }
 
   .all_comments {
     background-color: transparent;
     font-size: 12px;
-    width: 8.875em;
+    width:150px;
   }
 
   #LikeButton {
@@ -61,7 +66,6 @@ export const StyledCard = styled.li`
   .all_comments {
     background-color: transparent;
     font-size: 12px;
-    width: 142px;
   }
 
   .contanier_allComments{

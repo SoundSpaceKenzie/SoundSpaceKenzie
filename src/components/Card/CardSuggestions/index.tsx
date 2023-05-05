@@ -12,8 +12,10 @@ export const CardSuggestions = ({ user }: IProps) => {
   return (
     <StyledCardSuggestions>
       <div className='contanier_user'>
+        <div className='contanier_image'>
         <img src={user.avatar} alt={user.name} />
-        <p>{user.name}</p>
+        </div>
+        <p>{user.name}</p>  
       </div>{
       !seguindo ? 
       <button onClick={()=>setSeguindo(true)}>Seguir</button> :
