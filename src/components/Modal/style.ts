@@ -69,7 +69,7 @@ export const ModalStyled = styled.div`
   }
 
   option {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   textarea {
@@ -82,6 +82,10 @@ export const ModalStyled = styled.div`
     padding-top: 10px;
 
     border-radius: 5px;
+
+    ::placeholder{
+      font-family: Inter;
+    }
   }
 
   .button__post{
@@ -98,7 +102,5 @@ export const ModalStyled = styled.div`
 
   @media (min-width: 450px) {
     width: 375px;
-
-
   }
 `;

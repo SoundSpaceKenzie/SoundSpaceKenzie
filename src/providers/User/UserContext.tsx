@@ -29,7 +29,6 @@ export const UserProvider = ({ children }: IUserContextProps) => {
       console.log(error);
     }
   };
-  console.log(User);
   const UserLogin = async (dataForm: TLoginValues) => {
     try {
       const { data }: IDataLoginRequest = await Api.post('/login', dataForm);

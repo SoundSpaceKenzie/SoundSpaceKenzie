@@ -14,9 +14,7 @@ export const StyledHeader = styled.header`
   .Resp-container {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    max-width: 1024px;
-    padding: 0px 25px;
+    width: 90%;
     .logo {
       max-height: 75px;
     }
@@ -29,9 +27,7 @@ export const StyledHeader = styled.header`
         width: 45px;
         height: 45px;
         border-radius: 50%;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
+        object-fit:cover;
       }
       .ExitBtn {
         width: 25px;

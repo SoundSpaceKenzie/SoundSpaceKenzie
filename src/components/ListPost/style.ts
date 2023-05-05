@@ -4,8 +4,7 @@ export const StyledListPost = styled.ul`
 display: flex;
 flex-direction: column;
 gap: 1.5em;
-padding: 1.2em 1em;
-background-color:#f5f5f5;
+padding: 1.2em 0em;
 height: auto;
 max-width:19em;
 
